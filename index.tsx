@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { createRoot } from "react-dom/client";
 import { 
@@ -363,7 +362,7 @@ const DiagonalShowcase = () => {
           {/* Overlay set to transparent for clean image, aligned to start */}
           <div className="absolute inset-0 [transform:skewX(12deg)] flex flex-col justify-end pb-24 items-start text-left bg-transparent pointer-events-none">
              {/* Adjusted max-w to 3xl to fix line breaks */}
-             <div className="max-w-3xl pl-12 md:pl-64 pr-4"> 
+             <div className="max-w-3xl pl-12 md:pl-40 pr-4"> 
                  <BlurText text="HARMONIA FACIAL" as="h3" className="text-white font-serif text-3xl md:text-5xl mb-4 tracking-wider drop-shadow-md" />
                  <BlurText text="Realce sua beleza natural com procedimentos personalizados para você." as="p" className="text-white/90 font-light text-sm md:text-lg leading-relaxed drop-shadow-md" delay={0.2} />
              </div>
