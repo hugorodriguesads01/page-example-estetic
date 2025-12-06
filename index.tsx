@@ -95,9 +95,10 @@ interface BlurTextProps {
   className?: string;
   delay?: number;
   as?: any; 
+  alwaysShow?: boolean;
 }
 
-const BlurText: React.FC<BlurTextProps> = ({ text, className = "", delay = 0, as: Component = "p" }) => {
+const BlurText: React.FC<BlurTextProps> = ({ text, className = "", delay = 0, as: Component = "p", alwaysShow = false }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10%" });
   const characters = typeof text === 'string' ? text.split("") : [];
@@ -132,7 +133,7 @@ const BlurText: React.FC<BlurTextProps> = ({ text, className = "", delay = 0, as
       <motion.span
         variants={container}
         initial="hidden"
-        animate={isInView ? "show" : "hidden"}
+        animate={alwaysShow || isInView ? "show" : "hidden"}
         className="inline-block"
       >
         {characters.map((char, index) => (
@@ -238,16 +239,16 @@ const Navbar = () => {
       <div className="max-w-[1600px] mx-auto flex justify-between items-center px-8">
         <div className="hidden md:flex items-center space-x-8 text-xs md:text-sm tracking-widest uppercase font-medium">
           <a href="#benefits" className="hover:opacity-60 transition-opacity">
-            <BlurText text="Benefícios" as="span" />
+            <BlurText text="Benefícios" as="span" alwaysShow />
           </a>
           <a href="#method" className="hover:opacity-60 transition-opacity">
-             <BlurText text="Método" as="span" delay={0.1} />
+             <BlurText text="Método" as="span" delay={0.1} alwaysShow />
           </a>
           <a href="#results" className="hover:opacity-60 transition-opacity">
-             <BlurText text="Resultados" as="span" delay={0.2} />
+             <BlurText text="Resultados" as="span" delay={0.2} alwaysShow />
           </a>
           <a href="#faq" className="hover:opacity-60 transition-opacity">
-             <BlurText text="Dúvidas" as="span" delay={0.3} />
+             <BlurText text="Dúvidas" as="span" delay={0.3} alwaysShow />
           </a>
         </div>
         
