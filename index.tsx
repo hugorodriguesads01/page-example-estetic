@@ -96,7 +96,7 @@ const ParallaxImage = ({ src, alt, className, priority = false }: ParallaxImageP
   );
 };
 
-// --- BlurText Component (Refactored for proper wrapping & semantics) ---
+// --- BlurText Component ---
 
 interface BlurTextProps {
   text: string;
@@ -544,7 +544,7 @@ const ProblemSolution = () => {
         >
             <div className="absolute inset-0">
                <ParallaxImage 
-                 src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop" 
+                 src="https://i.imgur.com/dBtaVbd.png" 
                  alt="Mulher refletindo no espelho com confiança" 
                />
             </div>
@@ -985,7 +985,10 @@ const CTA = () => {
                 <BlurText text="Resultados reais, visíveis e rápidos: pele renovada, corpo modelado e autoestima elevada." as="p" delay={0.5} />
               </div>
               
-              <ShinyButton className="bg-white/10 text-white border border-white/20 hover:bg-white/20 px-8 md:px-10 py-3 md:py-4 text-sm md:text-base w-full md:w-auto">
+              <ShinyButton 
+                className="bg-white text-kanva-dark border-none hover:bg-gray-100 px-8 md:px-10 py-3 md:py-4 text-sm md:text-base w-full md:w-auto"
+                style={{ "--primary": "0 0% 0%" } as React.CSSProperties}
+              >
                  Agende sua avaliação agora
               </ShinyButton>
            </div>
